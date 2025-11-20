@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+    <title>Inscrições Farm Yeshua</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <img src="images/farmbackgroundsemfundo.png" alt="" id="yeshuaFarm">
+
+        <form id="form">
+            <label>Nome:</label>
+            <input type="text" name="Nome" required placeholder="Nome completo">
+
+            <label>Data de nascimento:</label>
+            <input type="date" name="DataNascimento" required placeholder="Data de nascimento">
+
+            <label>Idade:</label>
+            <input type="text" name="Idade" required placeholder="Sua idade">
+
+            <label>WhatsApp:</label>
+            <input type="text" name="Whatsapp" required placeholder="(43)xxxxx-xxxx">
+
+            <label>WhatsApp do responsável:</label>
+            <input type="text" name="WhatsappResponsavel" required placeholder="(43)xxxxx-xxxx">
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="loading" class="spinner"></div>
+        <p id="msg"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,193 @@
+*{
+      font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* PRIMEIRA IMAGEM */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("images/farmimage.PNG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: slideShow 10s infinite;
+    opacity: 1;
+    z-index: -2; /* fica atrás de tudo */
+}
+
+/* SEGUNDA IMAGEM */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("images/background.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: slideShow 10s infinite;
+    animation-delay: 5s; /* começa depois */
+    opacity: 0;
+    z-index: -1;
+}
+
+/* Animação de fade */
+@keyframes slideShow {
+    0% { opacity: 1; }
+    40% { opacity: 1; }
+    50% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#yeshuaFarm{
+    height:115px;
+    width: 140px;
+    margin-top: -50px;
+    margin-left: 100px;
+    animation: none !important;
+    transform: none !important;
+}
+
+@keyframes slide {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(-100%); }
+}
+
+/* FORMULÁRIO */
+.form-container {
+    background: #ffffff;
+    height: 455px;
+    width: 340px;
+    padding: 40px;
+    box-shadow: 0 4px 15px #ffffff96;
+}
+
+label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000e1;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    border: none;              /* remove TODAS as bordas */
+    border-bottom: 2px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    outline: none;
+    transition: .2s;
+}
+
+input:focus {
+    border-color: #ff0000;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+button:hover {
+    background: #005fcc;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+    margin: 10px auto;
+    display: none; /* escondido por padrão */
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Telas MUITO pequenas — 320px */
+@media (max-width: 330px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 95% !important;      /* ocupa quase a tela toda */
+        height: auto;               /* ajusta altura para caber tudo */
+        padding: 25px;              /* reduz padding p/ caber melhor */
+    }
+
+    input {
+        width: 100%;                /* aproveita mais espaço */
+    }
+
+    #yeshuaFarm {
+        margin-left: 0;             /* evita cortar na tela pequena */
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+}
+
+
+@media (min-width: 331px) and (max-width: 400px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .form-container {
+        width: 85% !important;      /* menor que 320 mas ainda confortável */
+        height: auto;               /* sempre deixa o conteúdo visível */
+        padding: 30px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    #yeshuaFarm {
+        margin-left: 20px;
+        height: 100px;
+        width: 120px;
+    }
+}
+/* Ajuste para tablets — 768px */
+@media (max-width: 768px) {
+    .form-container {
+        width: 50%;        /* menor, porém confortável */
+        height: auto;    /* ajusta a altura para caber tudo */
+        padding: 35px;     /* levemente reduzido */
+    }
+
+    #yeshuaFarm {
+        margin-left: 0;
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+}
